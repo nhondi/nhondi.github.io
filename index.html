@@ -38,30 +38,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
   <style>
-      h2.shining {
-        position: relative;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        overflow: hidden;
-        background: linear-gradient(90deg, rgb(0, 0, 0), #fff, #000);
-        background-repeat: no-repeat;
-        background-size: 80%;
-        animation: animate 3s linear infinite;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: rgba(255, 255, 255, 0);
-      }
+    video {
+      width: 60% !important;
+      height: auto !important;
+    }
 
-      @keyframes animate {
-        0% {
-          background-position: -500%;
-        }
-        100% {
-          background-position: 500%;
-        }
+    h2.shining {
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      overflow: hidden;
+      background: linear-gradient(90deg, rgb(0, 0, 0), #fff, #000);
+      background-repeat: no-repeat;
+      background-size: 80%;
+      animation: animate 3s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    }
+
+    @keyframes animate {
+      0% {
+        background-position: -500%;
       }
-      p{
-        color: rgb(131, 131, 131);
+      100% {
+        background-position: 500%;
       }
+    }
+    p{
+      color: rgb(131, 131, 131);
+    }
+    
     h1,h2,h3 {font-family: "Alegreya", serif;}
     body,p,h4,h5,h6 {font-family: 'Yatra One', cursive;}
     .w3-row-padding img {margin-bottom: 12px}
@@ -119,8 +125,7 @@
 
       <b><h2 class = "shining">NPIRE GAMES</h2></b>
 
-      <video width="896" height="504" controls>
-        <source src="Showreel.mp4" type="video/mp4">
+      <video src="Showreel.mp4" controls>
         Your browser does not support the video tag.
       </video>
     </header>
