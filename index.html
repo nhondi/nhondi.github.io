@@ -1,225 +1,161 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
-    <link rel="manifest" href="Favicon/site.webmanifest">
-    <link rel="mask-icon" href="Favicon/safari-pinned-tab.svg" color="#363b51">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="theme-color" content="#363b51">
+<html lang="en">
 
-    <style>
-      a:link {
-        text-decoration: none;
-      }
-      
-      a:visited {
-        text-decoration: none;
-      }
-      
-      a:hover {
-        text-decoration: none;
-      }
-      
-      a:active {
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <title>
-    NPIRE Games
-  </title>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-  <style>
-    video {
-      width: 65% !important;
-      height: auto !important;
-    }
+  <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+  <link rel="manifest" href="Favicon/site.webmanifest">
+  <link rel="mask-icon" href="Favicon/safari-pinned-tab.svg" color="#363b51">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#363b51">
+  <title>NPIRE Games</title>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet">
+<style>
+  h1,h2,h3 {font-family: "Alegreya", serif;
+  font-size: 200px;
+  color: white;}
+  .btn {
+  background-color: rgb(0, 0, 0); /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-family: 'Yatra One', cursive;
+  font-size: 50px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
 
-    h2.shining {
-      position: relative;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      overflow: hidden;
-      background: linear-gradient(90deg, rgb(0, 0, 0), #fff, #000);
-      background-repeat: no-repeat;
-      background-size: 80%;
-      animation: animate 3s linear infinite;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: rgba(255, 255, 255, 0);
-    }
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: rgb(85, 85, 85);
+  color: rgb(39, 39, 39); /* White text */
+}
+  body {
+    background-color: rgb(31, 31, 31);
+  }
 
-    @keyframes animate {
-      0% {
-        background-position: -500%;
-      }
-      100% {
-        background-position: 500%;
-      }
-    }
-    p{
-      color: rgb(131, 131, 131);
-    }
-    
-    h1,h2,h3 {font-family: "Alegreya", serif;}
-    body,p,h4,h5,h6 {font-family: 'Yatra One', cursive;}
-    .w3-row-padding img {margin-bottom: 12px}
-    /* Set the width of the sidebar to 120px */
-    .w3-sidebar {width: 120px;background: #222;}
-    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-    #main {margin-left: 120px}
-    /* Remove margins from "page content" on small screens */
-    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
-  </style>
+  .wrapper {
+    height: 100vh;
+    text-align: center;
+  }
+  .wrapper button {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-  <body class="w3-black">
+  .loader {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    transition: width 0s 1.4s ease;
+  }
+  .loader .loader__icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    transition: opacity .5s ease;
+  }
+  .loader .loader__icon svg {
+    transform-origin: 0 0;
+  }
+  .loader .loader__tile {
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 20%;
+    background-color: black;
+    background-blend-mode: multiply;
+    transition: width .7s ease;
+  }
+  .loader .loader__tile:nth-child(0) {
+    top: calc(-1 * 20%);
+    transition-delay: -0.2s;
+  }
+  .loader .loader__tile:nth-child(1) {
+    top: calc(0 * 20%);
+    transition-delay: 0s;
+  }
+  .loader .loader__tile:nth-child(2) {
+    top: calc(1 * 20%);
+    transition-delay: 0.2s;
+  }
+  .loader .loader__tile:nth-child(3) {
+    top: calc(2 * 20%);
+    transition-delay: 0.4s;
+  }
+  .loader .loader__tile:nth-child(4) {
+    top: calc(3 * 20%);
+    transition-delay: 0.6s;
+  }
+  .loader .loader__tile:nth-child(5) {
+    top: calc(4 * 20%);
+    transition-delay: 0.8s;
+  }
+  .loader--active {
+    width: 100%;
+    transition-delay: 0s;
+  }
+  .loader--active .loader__icon {
+    opacity: 1;
+    transition: opacity .5s 1.4s ease;
+  }
+  .loader--active .loader__tile {
+    width: 100%;
+  }
+  .loader--active .loader__tile:nth-child(0) {
+    transition-delay: -0.2s;
+  }
+  .loader--active .loader__tile:nth-child(1) {
+    transition-delay: 0s;
+  }
+  .loader--active .loader__tile:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .loader--active .loader__tile:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+  .loader--active .loader__tile:nth-child(4) {
+    transition-delay: 0.6s;
+  }
+  .loader--active .loader__tile:nth-child(5) {
+    transition-delay: 0.8s;
+  }
 
-  <!-- Icon Bar (Sidebar - hidden on small screens) -->
-  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-    <!-- Avatar image in top left corner -->
-    <img src="Images/logo black.png" style="width:100%">
-    <b>
-      <a href="#main" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-home w3-xxlarge"></i>
-        <p>HOME</p>
-      </a>
-      <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-user w3-xxlarge"></i>
-        <p>ABOUT</p>
-      </a>
-      <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-eye w3-xxlarge"></i>
-        <p>PROJECTS</p>
-      </a>
-      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa fa-envelope w3-xxlarge"></i>
-        <p>CONTACT</p>
-      </a>
-    </b>
-  </nav>
 
-  <!-- Navbar on small screens (Hidden on medium and large screens) -->
-  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <b>
-        <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-        <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-        <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
-        <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-      </b>
+
+</style>
+<body>
+  <div class="loader loader--active">
+    <div class="loader__icon">
+      <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+        <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>
+        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z"></path>
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"></animateTransform>
+      </svg>
     </div>
+    <div class="loader__tile"></div>
+    <div class="loader__tile"></div>
+    <div class="loader__tile"></div>
+    <div class="loader__tile"></div>
+    <div class="loader__tile"></div>
   </div>
-
-  <!-- Page Content -->
-  <div class="w3-padding-large" id="main">
-    <!-- Header/Home -->
-    <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-      <img src="Images/logo.png" style="width:10%">
-
-      <b><h2 class = "shining">NPIRE GAMES</h2></b>
-
-      <video src="Showreel.mp4" controls>
-        Your browser does not support the video tag.
-      </video>
-    </header>
-
-    <!-- About Section -->
-    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-      <b><h2 class="w3-text-light-grey">About Me</h2></b>
-      <hr style="width:200px" class="w3-opacity">
-      
-
-      <IMG SRC="Images/Portrait n.png" height="200" width="160" ALIGN="left" VSPACE = "5" HSPACE="50"/>
-      
-      <p>My name is Nathanael Hondi, currently a 17-year-old student at East London Arts and situated in London. I am an aspiring games developer taking my passion for technology and using it to create a variety of games. Currently, we are in a world where creativity and the desire to create is essential to bring something new to the world. Utilising Unity and C# I know how to program both 2D and 3D games and now seek to learn a wide variety of programming languages to widen my skill set. I occasionally also do digital art, drawing different forms of fanart and portraits. These skills and interests are what set me on my path as a game developer. </p>
-      <br>
-      
-      <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-      <p class="w3-wide">Unity C#</p>
-      <div class="w3-white">
-        <div class="w3-dark-grey" style="height:28px;width:75%"></div>
-      </div>
-      <p class="w3-wide">Web Design HTML</p>
-      <div class="w3-white">
-        <div class="w3-dark-grey" style="height:28px;width:10%"></div>
-      </div>
-      <br>
-      <a href="/CV.pdf" download class="w3-button w3-light-grey w3-padding-large w3-section">
-          
-        <i class="fa fa-download"></i> Download CV
-      </a>
-    </div><br>
-    
-    
-    <!-- Portfolio Section -->
-    <div class="w3-padding-64 w3-content" id="projects">
-      <h2 class="w3-text-light-grey">Projects</h2>
-      <hr style="width:200px" class="w3-opacity">
-
-      <!-- Grid for photos -->
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half">
-          <iframe frameborder="0" src="https://itch.io/embed/804340?linkback=true&amp;border_width=4&amp;bg_color=222222&amp;fg_color=eeeeee&amp;link_color=66b65c&amp;border_color=363636" style="width:100%"><a href="https://npire.itch.io/box-to-box">Box To Box by NPIRE Games</a></iframe>
-          <p>September 2020 - In Progress</p>
-
-          <iframe frameborder="0" src="https://itch.io/embed/556224?linkback=true&amp;border_width=4&amp;bg_color=2a2a2a&amp;fg_color=ffffff&amp;link_color=ff904e&amp;border_color=616161" style="width:100%"><a href="https://npire.itch.io/livraria-the-games">Livraria by NPIRE Games</a></iframe>
-          <p>November 2019 - January 2020</p>
-          
-          
-        </div>
-
-        <div class="w3-half">
-
-          <iframe frameborder="0" src="https://itch.io/embed/517452?linkback=true&amp;border_width=4&amp;dark=true" style="width:100%"><a href="https://npire.itch.io/quickstep-v08">QuickStep by NPIRE Games</a></iframe>
-          <p>September 2019 - November 2019</p>
-        </div>
-      <!-- End photo grid -->
-      </div>
-    <!-- End Portfolio Section -->
-    </div>
-
-    <!-- Contact Section -->
-    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-      <h2 class="w3-text-light-grey">Contact Me</h2>
-      <hr style="width:200px" class="w3-opacity">
-
-      <br>
-      <p>Let's get in touch. Send me a message:</p>
-      <br>
-
-      <div class="w3-section">
-        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> London, UK</p>
-        <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +44 7446355123</p>
-        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: latest_nhondi@hotmail.com</p>
-      </div><br>
-
-      
-    <!-- End Contact Section -->
-    </div>
-    
-      <!-- Footer -->
-    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-      <a href="https://www.instagram.com/npire_games/" class="fa fa-instagram w3-hover-opacity"> 
-      
-      </a>
-      <a href="https://github.com/nhondi" class="fa fa-github w3-hover-opacity">
-      
-      </a>
-
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-
-    <!-- End footer -->
-    </footer>
-
-  <!-- END PAGE CONTENT -->
+  <div class="wrapper">
+    <button class="btn" type="button">
+      <img src="Images/logo.png" style="width:20%">
+    </button>
   </div>
-
-  </body>
+  <script src="transition.js"></script> 
+</body>
 </html>
