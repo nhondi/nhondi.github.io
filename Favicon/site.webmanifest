@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "NPIRE Games",
+    "short_name": "NPIRE Games",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,8 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#363b51",
-    "background_color": "#363b51",
-    "start_url": "https://nhondi.github.io/",
+    "theme_color": "#000000",
+    "background_color": "#000000",
     "display": "standalone"
 }
