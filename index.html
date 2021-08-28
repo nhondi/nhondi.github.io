@@ -2,160 +2,318 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
-  <link rel="manifest" href="Favicon/site.webmanifest">
-  <link rel="mask-icon" href="Favicon/safari-pinned-tab.svg" color="#363b51">
-  <meta name="msapplication-TileColor" content="#2b5797">
-  <meta name="theme-color" content="#363b51">
-  <title>NPIRE Games</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
+    <link rel="manifest" href="Favicon/site.webmanifest">
+    <link rel="mask-icon" href="Favicon/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>NPIRE Games</title>
+    
 </head>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@800&display=swap" rel="stylesheet">
-<style>
-  h1,h2,h3 {font-family: "Alegreya", serif;
-  font-size: 200px;
-  color: white;}
-  .btn {
-  background-color: rgb(0, 0, 0); /* Blue background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-family: 'Yatra One', cursive;
-  font-size: 50px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
-}
 
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: rgb(85, 85, 85);
-  color: rgb(39, 39, 39); /* White text */
-}
-  body {
-    background-color: rgb(31, 31, 31);
-  }
-
-  .wrapper {
-    height: 100vh;
-    text-align: center;
-  }
-  .wrapper button {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .loader {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100vh;
-    transition: width 0s 1.4s ease;
-  }
-  .loader .loader__icon {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    opacity: 0;
-    transition: opacity .5s ease;
-  }
-  .loader .loader__icon svg {
-    transform-origin: 0 0;
-  }
-  .loader .loader__tile {
-    position: absolute;
-    left: 0;
-    width: 0;
-    height: 20%;
-    background-color: black;
-    background-blend-mode: multiply;
-    transition: width .7s ease;
-  }
-  .loader .loader__tile:nth-child(0) {
-    top: calc(-1 * 20%);
-    transition-delay: -0.2s;
-  }
-  .loader .loader__tile:nth-child(1) {
-    top: calc(0 * 20%);
-    transition-delay: 0s;
-  }
-  .loader .loader__tile:nth-child(2) {
-    top: calc(1 * 20%);
-    transition-delay: 0.2s;
-  }
-  .loader .loader__tile:nth-child(3) {
-    top: calc(2 * 20%);
-    transition-delay: 0.4s;
-  }
-  .loader .loader__tile:nth-child(4) {
-    top: calc(3 * 20%);
-    transition-delay: 0.6s;
-  }
-  .loader .loader__tile:nth-child(5) {
-    top: calc(4 * 20%);
-    transition-delay: 0.8s;
-  }
-  .loader--active {
-    width: 100%;
-    transition-delay: 0s;
-  }
-  .loader--active .loader__icon {
-    opacity: 1;
-    transition: opacity .5s 1.4s ease;
-  }
-  .loader--active .loader__tile {
-    width: 100%;
-  }
-  .loader--active .loader__tile:nth-child(0) {
-    transition-delay: -0.2s;
-  }
-  .loader--active .loader__tile:nth-child(1) {
-    transition-delay: 0s;
-  }
-  .loader--active .loader__tile:nth-child(2) {
-    transition-delay: 0.2s;
-  }
-  .loader--active .loader__tile:nth-child(3) {
-    transition-delay: 0.4s;
-  }
-  .loader--active .loader__tile:nth-child(4) {
-    transition-delay: 0.6s;
-  }
-  .loader--active .loader__tile:nth-child(5) {
-    transition-delay: 0.8s;
-  }
-
-
-
-</style>
 <body>
-  <div class="loader loader--active">
-    <div class="loader__icon">
-      <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-        <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>
-        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z"></path>
-        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"></animateTransform>
-      </svg>
+
+    <div class="intro">
+        <h1 class="logo-header">
+            <div class="parent">
+                <span class="logo"><img class="img1" src="./Images/Logo/All White Transparent .png"></span>
+            </div>
+        </h1>
     </div>
-    <div class="loader__tile"></div>
-    <div class="loader__tile"></div>
-    <div class="loader__tile"></div>
-    <div class="loader__tile"></div>
-    <div class="loader__tile"></div>
-  </div>
-  <div class="wrapper">
-    <button class="btn" type="button">
-      <img src="Images/logo.png" style="width:20%">
-    </button>
-  </div>
-  <script src="transition.js"></script> 
+
+    <div class="video_contain">
+        <!-- The video -->
+        <video muted="true" autoplay loop id="myVideo">
+            <source src="Showreel.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="ct" id="Homepage">
+        <div class="ct" id="About-Me">
+            <div class="ct" id="Games-Projects">
+                <div class="ct" id="Art-Drawings">
+                    <div class="ct" id="Skills-CV">
+                        <section>
+                            <ul id="sidenav">
+                                <a href="#Homepage" onclick="stopVideo()"> <img src="./Images/Icons/home-5-xl.png" height="25vh" >  <br> Home </a>
+                                <p><br></p>
+                                <a href="#About-Me" onclick="stopVideo()"> <img src="./Images/Icons/info-4-xl.png" height="25vh"> <br> About </a>
+                                <p><br></p>
+                                <a href="#Games-Projects" onclick="playVideo()"> <img src="./Images/Icons/joystick-2-xl.png" height="25vh" > <br> Games </a>
+                                <p><br></p>
+                                <a href="#Art-Drawings" onclick="stopVideo()"> <img src="./Images/Icons/paint-brush-xl.png" height="25vh"> <br> Art </a>
+                                <p><br></p>
+                                <a href="#Skills-CV" onclick="stopVideo()"> <img src="./Images/Icons/paper-xl.png" height="25vh" > <br> Skills </a>
+                            </ul>
+                            <div class="page" id="p1">
+                                <li class="icon">
+
+                                    <span class="title">
+                                        <img src="./Images/Logo/All White Transparent .png" class="center" onclick="myFunction()"><br>
+                                    </span>
+
+                                    <div id="typewriter" class="keyText"></div>
+                                    
+                                </li>
+                            </div>
+
+                            <div class="page" id="p2">
+                                <li class="icon">
+                                    <div class="about-section">
+                                        <h1>|About Page|</h1>
+                                        <p>NPIRE Games is an organisation which creates a variety of products from games to art.</p>
+                                        <p> Currenlty a small group they strive to produce top quality work fitting of a king.</p>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="column">
+                                            <div class="card">
+                                            <img src="/Images/Portrait b.png" alt="nhondi" align="left">
+                                            
+                                                
+                                                <h1>Nathanael Hondi</h1>
+                                                <h2>CEO & Founder</h2>
+                                                <p>Nathanael Hondi, currently a 18-year-old student situated in London. An aspiring games developer taking his passion for technology and using it to create a variety of games. "Currently, we are in a world where creativity and the desire to create is essential to bring something new to the world." Utilising Unity and C# he knows how to program both 2D and 3D games and now seeks to learn a wide variety of programming languages to widen his skill set. He occasionally also does digital art, drawing different forms of fanart and portraits. These skills and interests are what set him on my path as a game developer.</p>
+                                                
+                                            
+                                        </div>
+                                    </div>
+
+                                </li>
+                            </div>
+
+                            <div class="page" id="p3">
+                                <li class="icon">
+                                    <div class ="about-section">
+                                        <h1>|Games/Projects|</h1>
+                                    </div>
+                                        <span class="games">
+                                            <span class="showreel" align="top">
+                                                <video id="video" class="video" controls >
+                                                    <source src="Showreel.mp4" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                                
+                                            </span>
+
+                                            <span class="sidebar">
+                                                <img src="./Images/Icons/Up Arrow.png" height="10%" onclick="plusDivs(-1)">
+                                                <span class="mySlides"> 
+                                                    <a href="https://npire.itch.io/the-gauntlet" target="_blank" rel="noopener noreferrer">
+                                                    <img class="slideshow" src="./Images/Gauntlet.png">
+                                                    <h5>The Gauntlet</h5>
+                                                    <h6>3D Local Multiplayer Party Game</h6>
+                                                    </a>
+                                                </span>
+
+                                                <span class="mySlides"> 
+                                                    <a href="https://npire.itch.io/livraria-the-games"  target="_blank" rel="noopener noreferrer">
+                                                        <img class="slideshow" src="./Images/IQube.png">
+                                                        <h5>IQube</h5>
+                                                        <h6>Fast Paced Puzzle Game</h6>
+                                                    </a>
+                                                </span>
+
+                                                <span class="mySlides"> 
+                                                    <a href="https://npire.itch.io/livraria-the-games"  target="_blank" rel="noopener noreferrer">
+                                                        <img class="slideshow" src="./Images/Livraria.png">
+                                                        <h5>Livraria</h5>
+                                                        <h6>Horror Escape Room</h6>
+                                                    </a>
+                                                </span>
+
+                                                <span class="mySlides"> 
+                                                    <a href="https://npire.itch.io/quickstep-v08"  target="_blank" rel="noopener noreferrer">
+                                                        <img class="slideshow" src="./Images/QuickStep.png">
+                                                        <h5>QuickStep</h5>
+                                                        <h6>2D Endless Runner</h6>
+                                                    </a>
+                                                </span>
+
+                                                <img src="./Images/Icons/down arrow.png" height="10%" onclick="plusDivs(+1)">
+
+                                                
+                                            </span>
+
+                                        </span>
+                                </li>
+                            </div>
+
+                            <div class="page" id="p4">
+                                <li class="icon">
+                                    <div class ="about-section">
+                                        <h1>|Artwork|</h1>
+                                        <p>Collection of Art produced and uploaded on Instagram @npire_games</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="elfsight-app-d439051b-892e-4f88-ab23-527eb726b724"></div>
+                                </li>
+                            </div>
+
+                            <div class="page" id="p5">
+                                <li class="icon">
+                                    <div class="about-section">
+                                        <h1>|Skills|</h1>
+                                        <span class="buttons">
+                                            <a href="./Documents/NATHANAEL HONDI Professional CV.pdf" download class="button button3">            
+                                                <p>Download Professional CV</p> 
+                                            </a>
+
+                                            <a href="./Documents/Nathanael Hondi Creative CV.pdf" download class="button button3">            
+                                                <p>Download Creative CV</p> 
+                                            </a>
+                                        </span>
+
+                                    </div>
+                                    <span class="skills">
+                                        
+                                        <div class="container">
+                                            <h1>Skill Set</h1>                                           
+                                            <div class="bar learning" data-skill="C++"></div>
+                                            <div class="bar learning" data-skill="Java"></div>
+                                            <div class="bar basic" data-skill="Python"></div>
+                                            <div class="bar intermediate" data-skill="CSS"></div>
+                                            <div class="bar advanced" data-skill="HTML5"></div>
+                                            <div class="bar advanced" data-skill="C#"></div>
+                                            <div class="bar expert" data-skill="Unity Engine"></div>                                
+                                        </div>
+                                        
+
+                                    </span>
+                                    
+                                    
+                                </li>
+                            </div>
+                            <p class="credit">
+
+                                <a href="https://www.instagram.com/npire_games/" target="_blank" rel="noopener noreferrer">
+                                    <img src="./Images/Icons/Instagram.png" class="socialIcon"> 
+                                </a>
+
+                                <a href="https://github.com/nhondi" target="_blank" rel="noopener noreferrer">
+                                    <img src="./Images/Icons/github.png" class="socialIcon"> 
+                                </a>
+
+                                <a href="https://www.linkedin.com/in/nathanael-hondi-4488b1200/" target="_blank" rel="noopener noreferrer">
+                                    <img src="./Images/Icons/linkedin.png" class="socialIcon"> 
+                                </a>
+
+                                <a href="mailto: latest_nhondi@hotmail.com" target="_blank" rel="noopener noreferrer"> 
+                                    <img src="./Images/Icons/Email.png" class="socialIcon">
+                                </a>
+
+                                <a href="https://npire.itch.io/" target="_blank" rel="noopener noreferrer"> 
+                                    <img src="./Images/Icons/Itch.png" class="socialIcon">
+                                </a>
+                                
+                            </p>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script>
+        // Get the video
+        var video = document.getElementById("myVideo");
+        var showreel = document.getElementById("video");
+
+        // Get the button
+        var btn = document.getElementById("myBtn");
+
+        // Pause and play the video, and change the button text
+        function myFunction() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        function stopVideo()
+        {
+            showreel.pause();
+            showreel.currentTime=0;
+        }
+
+        function playVideo()
+        {
+            showreel.play();
+        }
+        function toggleMute() {
+            if (video.muted) {
+                video.muted = false;
+            } else {
+                debugger;
+                video.muted = true;
+                video.play()
+            }
+
+        }
+
+        const instance = new Typewriter('#typewriter', {
+            strings: ['Student', 'Programmer', 'Artist', 'Game Developer'],
+            autoStart: true,
+            loop: true,
+        });
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+        }
+
+        var slideIndex = 0;
+        
+
+        function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {slideIndex = 1}
+        x[slideIndex-1].style.display = "block";
+        setTimeout(carousel, 30000); // Change image every 30 seconds
+        }
+
+        
+    </script>
+
+
 </body>
+
 </html>
