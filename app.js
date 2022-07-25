@@ -1,30 +1,23 @@
-let intro = document.querySelector('.intro');
-let logo = document.querySelector('.logo-header');
-let logoSpan = document.querySelectorAll('.logo');
+let mainNavLinks = document.querySelectorAll(".navbar .clickable");
+let mainSections = document.querySelectorAll(".main section");
 
-window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        logoSpan.forEach((span, idx) => {
-            setTimeout(() => {
-                span.classList.add('active');
-            }, (idx + 1) * 500)
-        });
+let lastId;
+let cur = [];
 
-        setTimeout(() => {
-            logoSpan.forEach((span, idx) => {
-                setTimeout(() => {
-                    span.classList.remove('active');
-                    span.classList.add('fade');
-                }, (idx + 1) * 150)
-            })
-        }, 2000)
 
-        setTimeout(() => {
-            intro.style.top = "-150vh";
-        }, 2300)
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+  
 
-    })
+  mainNavLinks.forEach(link => {
+    let section = document.querySelector(link.hash);
 
-    window.open("#Homepage","_self")
-})
-
+    if (fromTop >= section.offsetTop - 10 && fromTop < section.offsetTop + section.offsetHeight - 10)
+    {
+      link.classList.add("active");
+    } 
+    else {
+      link.classList.remove("active");
+    }
+  });
+});

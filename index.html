@@ -1,330 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="blog.css">
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@220&family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+        <!--- Favicon --->
+        <link rel="apple-touch-icon" sizes="180x180" href="common/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="common/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="common/favicon/favicon-16x16.png">
+        <link rel="manifest" href="common/favicon/site.webmanifest">
+        <link rel="mask-icon" href="common/favicon/safari-pinned-tab.svg" color="#5d26aa">
+        <meta name="msapplication-TileColor" content="#603cba">
+        <meta name="theme-color" content="#ffffff">
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
-    <link rel="manifest" href="Favicon/site.webmanifest">
-    <link rel="mask-icon" href="Favicon/safari-pinned-tab.svg" color="#000000">
-    <meta name="msapplication-TileColor" content="#000000">
-    <meta name="theme-color" content="#ffffff">
-
-    <title>NPIRE Games</title>
-    
-</head>
-
-<body>
-
-    <div class="intro">
-        <h1 class="logo-header">
-            <div class="parent">
-                <span class="logo"><img class="img1" src="./Images/Logo/All White Transparent .png"></span>
-            </div>
-        </h1>
-    </div>
-
-    <div class="video_contain">
-        <!-- The video -->
-        <video muted="true" autoplay loop id="myVideo">
-            <source src="./Quick Compile.mp4" type="video/mp4">
-            <source src="./Quick Compile.flv" type="video/flv">
-            <source src="./Quick Compile.ogg" type="video/ogg">
-            <source src="/Quick Compile.avi" type="video/avi">
-            <source src="./Quick Compile.mov" type="video/mov">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <div class="ct" id="Homepage">
-        <div class="ct" id="About-Me">
-            <div class="ct" id="Games-Projects">
-                <div class="ct" id="Art-Drawings">
-                    <div class="ct" id="Skills-CV">
-                        <section>
-                            <ul id="sidenav">
-                                <a href="#Homepage" onclick="stopVideo()"> <img src="./Images/Icons/home-5-xl.png" height="25vh" >  <br> Home </a>
-                                <p><br></p>
-                                <a href="#About-Me" onclick="stopVideo()"> <img src="./Images/Icons/info-4-xl.png" height="25vh"> <br> About </a>
-                                <p><br></p>
-                                <a href="#Games-Projects" onclick="playVideo()"> <img src="./Images/Icons/joystick-2-xl.png" height="25vh" > <br> Games </a>
-                                <p><br></p>
-                                <a href="#Art-Drawings" onclick="stopVideo()"> <img src="./Images/Icons/paint-brush-xl.png" height="25vh"> <br> Art </a>
-                                <p><br></p>
-                                <a href="#Skills-CV" onclick="stopVideo()"> <img src="./Images/Icons/paper-xl.png" height="25vh" > <br> Skills </a>
-                            </ul>
-                            <div class="page" id="p1">
-                                <li class="icon">
-
-                                    <span class="title">
-                                        <img src="./Images/Logo/All White Transparent .png" class="center" onclick="myFunction()"><br>
-                                    </span>
-
-                                    <div id="typewriter" class="keyText"></div>
-                                    
-                                </li>
-                            </div>
-
-                            <div class="page" id="p2">
-                                <li class="icon">
-                                    <div class="about-section">
-                                        <h1>|About Page|</h1>
-                                        <p>NPIRE Games is an organisation which creates a variety of products from games to art.</p>
-                                        <p> Currenlty a small group they strive to produce top quality work fitting of a king.</p>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="column">
-                                            <div class="card">
-                                            <img src="/Images/Portrait b.png" alt="nhondi" align="left">
-                                            
-                                                
-                                                <h1>Nathanael Hondi</h1>
-                                                <h2>CEO & Founder</h2>
-                                                <p>Nathanael Hondi, currently a 18-year-old student situated in London. An aspiring games developer taking his passion for technology and using it to create a variety of games. "Currently, we are in a world where creativity and the desire to create is essential to bring something new to the world." Utilising Unity and C# he knows how to program both 2D and 3D games and now seeks to learn a wide variety of programming languages to widen his skill set. He occasionally also does digital art, drawing different forms of fanart and portraits. These skills and interests are what set him on my path as a game developer.</p>
-                                                
-                                            
-                                        </div>
-                                    </div>
-
-                                </li>
-                            </div>
-
-                            <div class="page" id="p3">
-                                <li class="icon">
-                                    <div class ="about-section">
-                                        <h1>|Games/Projects|</h1>
-                                    </div>
-                                        <span class="games">
-                                            <span class="showreel">
-                                                <video id="video" class="video" controls >
-
-                                                    
-                                                    <source src="./Showreel.mp4" type="video/mp4">
-                                                    <source src="./Showreel.flv" type="video/flv">
-                                                    <source src="./Showreel.avi" type="video/avi">
-                                                    <source src="./Showreel.mov" type="video/mov">
-                                                    <source src="./Showreel.ogg" type="video/ogg">
-                                                    Your browser does not support the video tag.
-                                                </video>
-                                                
-                                            </span>
-
-                                            <span class="sidebar">
-                                                <img src="./Images/Icons/Up Arrow.png" height="10%" onclick="plusDivs(-1)">
-                                                <span class="mySlides"> 
-                                                    <a href="https://npire.itch.io/the-gauntlet" target="_blank" rel="noopener noreferrer">
-                                                    <img class="slideshow" src="./Images/Gauntlet.png">
-                                                    <h5>The Gauntlet</h5>
-                                                    <h6>3D Local Multiplayer Party Game</h6>
-                                                    </a>
-                                                </span>
-
-                                                <span class="mySlides"> 
-                                                    <a href="https://npire.itch.io/iqube"  target="_blank" rel="noopener noreferrer">
-                                                        <img class="slideshow" src="./Images/IQube.png">
-                                                        <h5>IQube</h5>
-                                                        <h6>Fast Paced Puzzle Game</h6>
-                                                    </a>
-                                                </span>
-
-                                                <span class="mySlides"> 
-                                                    <a href="https://npire.itch.io/livraria-the-games"  target="_blank" rel="noopener noreferrer">
-                                                        <img class="slideshow" src="./Images/Livraria.png">
-                                                        <h5>Livraria</h5>
-                                                        <h6>Horror Escape Room</h6>
-                                                    </a>
-                                                </span>
-
-                                                <span class="mySlides"> 
-                                                    <a href="https://npire.itch.io/quickstep-v08"  target="_blank" rel="noopener noreferrer">
-                                                        <img class="slideshow" src="./Images/QuickStep.png">
-                                                        <h5>QuickStep</h5>
-                                                        <h6>2D Endless Runner</h6>
-                                                    </a>
-                                                </span>
-
-                                                <img src="./Images/Icons/down arrow.png" height="10%" onclick="plusDivs(+1)">
-
-                                                
-                                            </span>
-
-                                        </span>
-                                </li>
-                            </div>
-
-                            <div class="page" id="p4">
-                                <li class="icon">
-                                    <div class ="about-section">
-                                        <h1>|Artwork|</h1>
-                                        <p>Collection of Art produced and uploaded on Instagram @npire_games</p>
-                                        <p></p>
-                                    </div>
-                                    <div class="elfsight-app-d439051b-892e-4f88-ab23-527eb726b724"></div>
-                                </li>
-                            </div>
-
-                            <div class="page" id="p5">
-                                <li class="icon">
-                                    <div class="about-section">
-                                        <h1>|Skills|</h1>
-                                        <span class="buttons">
-                                            <a href="./Documents/NATHANAEL HONDI Professional CV.pdf" download class="button button3">            
-                                                <p>Download Professional CV</p> 
-                                            </a>
-
-                                            <a href="./Documents/Nathanael Hondi Creative CV.pdf" download class="button button3">            
-                                                <p>Download Creative CV</p> 
-                                            </a>
-                                        </span>
-
-                                    </div>
-                                    <span class="skills">
-                                        
-                                        <div class="container">
-                                            <h1>Skill Set</h1>                                           
-                                            <div class="bar learning" data-skill="C++"></div>
-                                            <div class="bar learning" data-skill="Java"></div>
-                                            <div class="bar basic" data-skill="Python"></div>
-                                            <div class="bar intermediate" data-skill="CSS"></div>
-                                            <div class="bar advanced" data-skill="HTML5"></div>
-                                            <div class="bar advanced" data-skill="C#"></div>
-                                            <div class="bar expert" data-skill="Unity Engine"></div>                                
-                                        </div>
-                                        
-
-                                    </span>
-                                    
-                                    
-                                </li>
-                            </div>
-                            <p class="credit">
-
-                                <a href="https://www.instagram.com/npire_games/" target="_blank" rel="noopener noreferrer">
-                                    <img src="./Images/Icons/Instagram.png" class="socialIcon"> 
-                                </a>
-
-                                <a href="https://github.com/nhondi" target="_blank" rel="noopener noreferrer">
-                                    <img src="./Images/Icons/github.png" class="socialIcon"> 
-                                </a>
-
-                                <a href="https://www.linkedin.com/in/nathanael-hondi-4488b1200/" target="_blank" rel="noopener noreferrer">
-                                    <img src="./Images/Icons/linkedin.png" class="socialIcon"> 
-                                </a>
-
-                                <a href="mailto: latest_nhondi@hotmail.com" target="_blank" rel="noopener noreferrer"> 
-                                    <img src="./Images/Icons/Email.png" class="socialIcon">
-                                </a>
-
-                                <a href="https://npire.itch.io/" target="_blank" rel="noopener noreferrer"> 
-                                    <img src="./Images/Icons/Itch.png" class="socialIcon">
-                                </a>
-                                
-                            </p>
-                        </section>
-
-                    </div>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>
+            NPIRE Games
+        </title>
+    </head>
+    <body>
+        <div id="login-bg" style="filter: null">
+            <div class="navbar">
+                
+                <!-- self Portrait -->
+                <div>
+                    <img class="header-img" src="common/Portrait.png" alt="Nathanael Hondi">
+                    <a href="https://nhondi.github.io/" target="blank"><h5 class="header-text"> &lt NPIRE Games &gt</h5></a>
                 </div>
+                <h1 class="header-text">Nathanael Hondi</h1>
+                <h6 class="header-text">Games Developer & Web Designer</h6>
+                <br>
+                <a href="#home" class="clickable active"><img src="common/icons/home-5-xl.png" alt="home_icon" style="height: 100%;"> Home</a>
+                <a href="#about" class="clickable"><img src="common/icons/info-4-xl.png" alt="about_icon" style="height: 100%;"> About me</a>
+                <a href="#cv" class="clickable"><img src="common/icons/paper-xl.png" alt="cv_icon" style="height: 100%;"> CV</a>
+                <a href="#portfolio" class="clickable"><img src="common/icons/joystick-2-xl.png" alt="joystick_icon" style="height: 100%;"> Portfolio</a>
             </div>
+
+            <div class="main">
+                <div class="video_contain">
+                    <!-- The video -->
+                    <video muted="true" autoplay loop id="myVideo">
+                        <source src="./common/Quick Compile.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                    <section style="height: 100vh; min-height: 600px;" id="home">
+                        <span >
+                            <img class="home-img" src="common/logo/All White Transparent .png" alt="NPIRE Games Logo">
+                            <h1 class="home-htext">NPIRE Games</h1>
+                            
+                        
+                            <ul class="icons-parent">
+                                <a href="https://www.instagram.com/npire_games/" target="blank"> <img class="header-icon" src="common/icons/Instagram.png" alt=""></a>
+                                <a href="https://github.com/nhondi" target="blank"> <img class="header-icon" src="common/icons/github.png" alt="">  </a>
+                                <a href="https://npire.itch.io/" target="blank"> <img class="header-icon" src="common/icons/Itch.png" alt="">  </a>
+                            </ul>
+                        </span>
+                    </section>
+                    <section class="t" id="about">
+                        <br>
+                        <h1 >
+                            About Myself
+                        </h1>
+                        <hr>  
+                        <h6>
+                            Learn more about me!
+                        </h6>  
+                        <h2 style="">Student, Game Developer, Web Designer</h2>
+                        <ul>
+                            <a href="https://www.instagram.com/n_hondi/" target="blank"> <img src="common/icons/Instagram.png" class="about-icon"></a>
+                            <a href="https://steamcommunity.com/id/Hondilini_the_first/" target="blank"> <img src="common/icons/steam-xl.png" class="about-icon"></a>
+                            <a href="discordapp.com/users/673953200252125201" target="blank"> <img src="common/icons/Disocrd.png" class="about-icon"></a>
+                            <a href="https://www.linkedin.com/in/nathanael-hondi-4488b1200" target="blank"> <img src="common/icons/linkedin.png" class="about-icon"></a>
+                            <a href="https://open.spotify.com/user/yv0tclvq2qpfn2fsokyffaiiu?si=29a0f1aec5c84a8a" target="blank"> <img src="common/icons/spotify-xl.png" class="about-icon"></a>
+                        </ul>
+                        <table>
+                            <tr>
+                                <th>
+
+                                    <br>
+                                    <p>
+                                        My name is Nathanael Hondi and I am currently a 18-year-old student situated in London at Queen Mary University studying Creative Computing. I am an aspiring games developer taking my passion for technology and using it to create a variety of games. "Currently, we are in a world where creativity and the desire to create is essential to bring something new to the world." Utilising Unity and C# I know how to program both 2D and 3D games and now seeks to learn a wide variety of programming languages to widen my skill set. I occasionally also does digital art, drawing different forms of fanart and portraits. These skills and interests are what set him on my path as a game developer.
+                                    </p>
+                                </th>
+                            </tr>
+                            <tr>    
+                                <th>
+                                <figure>
+                                    <a href="./common/Portrait b.png" target="blank">
+                                        <img src="./common/Portrait b.png" height=300px alt="Nathanael Hondi Portrait"> 
+                                    </a>
+                                </figure>
+                                </th>
+                                <th> 
+                                    
+                                </th>
+                            </tr>
+                        </table>       
+                    </section>
+                    <section class="t" id="cv">
+                        <br>
+                        <h1 >
+                            CV
+                        </h1>
+                        <hr>
+                        <h3>
+                            Experience
+                        </h3>
+                        
+                        <p>
+                            You can download my CV via this <a href="NATHANAEL HONDI Professional CV.pdf" target="_blank" download>link</a>
+                        </p>
+                        <p>
+                            Updated on January 8th 2022
+                        </p>
+                        <br>
+                        <h3>
+                            Education
+                        </h3>
+                        <p>
+                            <b>2021 - 2025</b> BSc- Queen Mary University of London
+                            <br>
+                            <b>2019 - 2021</b> UAL Level 3 Extended Diploma- East London Arts and Music
+                            <br>
+                            <b>2014 - 2019</b> GCSE- Eastbury Community School
+                        </p>
+                        <br>
+                        <h3>
+                            Skills
+                        </h3>
+                        <p style="float: left;">HTML</p>
+                        <div class="container">
+                            <div class="skills html"></div>
+                        </div>
+
+                        <p style="float: left;">C#</p>
+                        <div class="container">
+                            <div class="skills cSh"></div>
+                        </div>
+
+                        <p style="float: left;">CSS</p>
+                        <div class="container">
+                            <div class="skills css"></div>
+                        </div>
+
+                        <p style="float: left;">JavaScript</p>
+                        <div class="container">
+                            <div class="skills js"></div>
+                        </div>
+
+                        <p style="float: left;">PHP</p>
+                        <div class="container">
+                            <div class="skills php"></div>
+                        </div>
+
+                        <br>
+
+                        <p style="float: left;">Leadership</p>
+                        <div class="container">
+                            <div class="skills Ls"></div>
+                        </div>
+
+                        <p style="float: left;">Critical Thinking</p>
+                        <div class="container">
+                            <div class="skills Ct"></div>
+                        </div>
+
+                        <p style="float: left;">Teamwork</p>
+                        <div class="container">
+                            <div class="skills Tw"></div>
+                        </div>
+
+                        <p style="float: left;">Adaptability</p>
+                        <div class="container">
+                            <div class="skills Aa"></div>
+                        </div>
+
+                        <p style="float: left;">Problem Solving</p>
+                        <div class="container">
+                            <div class="skills Ps"></div>
+                        </div>
+
+                        <p style="float: left;">Communication</p>
+                        <div class="container">
+                            <div class="skills Cu"></div>
+                        </div>
+                    </section>
+                    <section class="t" id ="portfolio">
+                        <br>
+                        <h1 >Portfolio</h1> 
+                        <hr>
+
+                        <br>
+                        <h1 class="center-text">Programming Showreel</h1>
+                        <span class="showreel">
+                            <video id="video" class="video" controls >
+
+                                
+                                <source src="common/Showreel.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                        </span>
+
+                        <div class="responsive">
+                            <div class="gallery">
+                                <a target="_blank" href="https://npire.itch.io/the-gauntlet">
+                                <img src="./common/logo/TG.png" alt="The Gauntlet" width="600" height="400">
+                                </a>
+                                <div class="desc">The Gauntlet is a 3D, slightly competitive, multiplayer party game with multiple mini-games, putting twists on classics, to suit a variety of demographics. We have considered online but due to time constraints, we will focus on offline couch play.</div>
+                            </div>
+                        </div>
+
+
+                        <div class="responsive">
+                            <div class="gallery">
+                                <a target="_blank" href="https://npire.itch.io/iqube">
+                                <img src="./common/logo/IQ.png" alt="I Qube" width="600" height="400">
+                                </a>
+                                <div class="desc">I.Qube is a fast-paced single player roguelite puzzle game.</div>
+                            </div>
+                        </div>
+
+                        <div class="responsive">
+                            <div class="gallery">
+                                <a target="_blank" href="https://npire.itch.io/livraria-the-games">
+                                <img src="./common/logo/Liv.jpeg" alt="Livraria" width="600" height="400">
+                                </a>
+                                <div class="desc">Elam Escape Room</div>
+                            </div>
+                        </div>
+
+                        <div class="responsive">
+                            <div class="gallery">
+                                <a target="_blank" href="https://npire.itch.io/quickstep-v08">
+                                <img src="./common/logo/QS.png" alt="Quickstep" width="600" height="400">
+                                </a>
+                            <div class="desc">Elam Endless Runner</div>
+                        </div>
+                            
+                    </div>
+                    <div class="clearfix"></div>
+                    </section>
+                    <footer style="z-index: 1; color: white; ">
+                    <em>
+                        Copyright &copy: 2022 Nathanael Hondi
+                    </em>
+                </footer>
+            </div>
+            
         </div>
-    </div>
 
-    <script type="text/javascript" src="app.js"></script>
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+          
+          
+          <script type="text/javascript" src="app.js"></script>
+          
 
-    <script>
-        // Get the video
-        var video = document.getElementById("myVideo");
-        var showreel = document.getElementById("video");
-
-        // Get the button
-        var btn = document.getElementById("myBtn");
-
-        // Pause and play the video, and change the button text
-        function myFunction() {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        }
-
-        function stopVideo()
-        {
-            showreel.pause();
-            showreel.currentTime=0;
-        }
-
-        function playVideo()
-        {
-            showreel.play();
-        }
-        function toggleMute() {
-            if (video.muted) {
-                video.muted = false;
-            } else {
-                debugger;
-                video.muted = true;
-                video.play()
-            }
-
-        }
-
-        const instance = new Typewriter('#typewriter', {
-            strings: ['Student', 'Programmer', 'Artist', 'Game Developer'],
-            autoStart: true,
-            loop: true,
-        });
-
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-        showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-        }
-        x[slideIndex-1].style.display = "block";  
-        }
-
-        var slideIndex = 0;
-        
-
-        function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > x.length) {slideIndex = 1}
-        x[slideIndex-1].style.display = "block";
-        setTimeout(carousel, 30000); // Change image every 30 seconds
-        }
-
-        
-    </script>
-
-
-</body>
-
+            
+    </body>
 </html>
